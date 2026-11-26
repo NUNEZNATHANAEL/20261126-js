@@ -1,0 +1,11 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+
+/* 共通（※DEMOによっては一部変更の必要アリ） */
+img {
+  display: block;
+  max-width: 400px;
+}
+
