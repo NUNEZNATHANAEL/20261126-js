@@ -1,0 +1,69 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+
+/* 共通（※DEMOによっては一部変更の必要アリ） */
+img {
+  margin-top: 2rem;
+  display: block;
+  max-width: 400px;
+  border: 2px solid #000;
+}
+
+/* 基本スタイル */
+body {
+  padding: 1rem;
+  background-color: beige;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(202, 89, 89);
+}
+
+h2 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* 左右に並べるラッパー */
+.img-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* 下からふわっと表示 */
+.img-fadein {
+  width: fit-content;
+  opacity: 0;
+  translate: 0 80px;
+  animation: fadein 1.5s var(--delay, 0s) forwards;
+}
+@keyframes fadein {
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+/* ふんわり浮かぶ画像 */
+.img-float {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: float 5s ease-in-out calc(1.5s + var(--delay, 0s)) infinite;
+}
+@keyframes float {
+  0%, 100% {
+    translate: 0;
+  }
+  50% {
+    translate: 0 -20px;
+    rotate: 4deg;
+  }
+}
